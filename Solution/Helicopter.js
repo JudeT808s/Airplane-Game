@@ -1,16 +1,14 @@
-class Plane extends FlyMobile {
+class Helicopter extends FlyMobile {
     constructor(afWidth,afHeight) {
         super(afWidth, afHeight)
-        this.size = 0.3;
+        this.size = 0.6;
+        this.heliSize = 30
+        this.width = this.size * this.heliSize
     }
 
     render() {
        super.render()
-        vertex(0, 0)
-        vertex(apWidth / 2, apTail)
-        vertex(0, -apHeight)
-        vertex(-(apWidth / 2), apTail)
-        vertex(0, 0)
+       ellipse(0,0,this.width)
         endShape()
         pop()
     }

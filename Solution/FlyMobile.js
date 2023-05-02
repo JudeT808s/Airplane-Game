@@ -10,7 +10,19 @@ class FlyMobile  {
          this.alert = false;
         
     }
-
+    render() {
+        push()
+        beginShape()
+        translate(this.pos.x, this.pos.y)
+        if (this.alert == true) {
+            noFill()
+            stroke(255, 0, 0)
+            circle(0, 0, 50)
+        }
+        fill(255)
+        rotate(this.rotation)
+        scale(this.size)
+    }
    
     slow() {
         this.speed.mult(random(-0.5, -1.5))

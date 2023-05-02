@@ -44,6 +44,7 @@ class AirField {
     generatePlanes(num) {
         for(let i = 0; i < this.num; i++) {
             this.planes.push(new Plane(this.airFieldWidth,this.airFieldHeight))
+            this.planes.push(new Helicopter(this.airFieldWidth,this.airFieldHeight))
         }
     }
 
