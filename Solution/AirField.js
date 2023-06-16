@@ -13,17 +13,14 @@ class AirField {
         for (let i = 0; i < this.planes.length; i++){
             for (let j = i + 1; j < this.planes.length; j++){
                 let distance = p5.Vector.sub(this.planes[i].pos, this.planes[j].pos).mag();
-                
-
+                this.timer =Math.round(frameCount / frames)
                 if
                     (distance <= 10) {
-                    console.log("Game over after " + Math.round(frameCount / frames) + " seconds");
+                    console.log("Game over after " + this.timer + " seconds");
                     frameCount = 0;
                 } else if (distance < 40) {
-                    // console.log("getting close")
                     this.planes[i].alert = true;
                     this.planes[j].alert = true;
-                    // console.log(this.planes[j].alert);
                 }
                
             }
@@ -39,11 +36,12 @@ class AirField {
             pop()
         });
         fill(255, 255, 255);
-        text(Math.round(frameCount / frames),(height +100),(-width +100))
+        textAlign(CENTER, CENTER)
+        text("Time alive " + this.timer + " seconds", width/2, height -25)
     }
     generatePlanes(num) {
         for(let i = 0; i < this.num; i++) {
-            this.planes.push(new Plane(this.airFieldWidth,this.airFieldHeight))
+            this.planes.push(new Plane(this.airFieldWidth,this.airFieldHeight),new Helicopter(this.airFieldWidth,this.airFieldHeight))
         }
     }
 

@@ -1,15 +1,8 @@
-class Plane {
+class Plane extends FlyMobile{
     constructor(afWidth,afHeight) {
-
-        this.speed = createVector(random(-1, 1), random(-1, 1));
-        this.pos = createVector(random(-afWidth/2, afWidth/2), random(-afHeight/2, afHeight/2))
-        this.afWidth = afWidth;
-        this.afHeight = afHeight;
-        this.altitude = Math.random() >= 0.5 ? 1000 : 2000;
+        super(afWidth, afHeight)
         this.size = 0.3;
-        this.rotation = atan2(this.speed.y, this.speed.x) + 90;
          //this.alert = bool;
-         this.alert = false;
     }
 
     render() {
