@@ -9,6 +9,8 @@ const rotAngle = 90
 let airfield;
 
 function setup() {
+  let time = frameCount;
+
   createCanvas(screenWidth, screenHeight);
   background(200);
   angleMode(DEGREES);
