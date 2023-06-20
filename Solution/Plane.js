@@ -25,45 +25,21 @@ class Plane extends FlyMobile {
         pop();
     }
 
+    turn() {
+        super.turn()
+    }
     slow() {
-        this.speed.mult(random(0.5, 0.9));
+        super.slow()
     }
-
-    speedUp() {
-        this.speed.mult(random(0.5, 1.5));
+    speed() {
+        super.speedUp()
     }
-
     step() {
-        this.pos.x += this.speed.x;
-        this.pos.y += this.speed.y;
+        super.step()
     }
-    checkLimits(){
-      
-        if(this.pos.x > this.afWidth/2){ 
-            this.pos.y = (map(this.pos.y, -this.afHeight, this.afHeight, this.afHeight, -this.afHeight ) )
-            console.log("yes");
-            this.pos.x = -this.afWidth/2;
-        }
 
-        if(this.pos.x < -this.afWidth/2){ 
-            this.pos.y = (map(this.pos.y, -this.afHeight, this.afHeight, this.afHeight, -this.afHeight ) )
-            
-            this.pos.x = this.afWidth/2;
-        }
-    
-        if(this.pos.y > this.afHeight/2){ 
-            this.pos.x = (map(this.pos.x, -this.afWidth, this.afWidth, this.afWidth, -this.afWidth) )
-          
-            this.pos.y = -this.afHeight/2;
-        }
-
-        if(this.pos.y < -this.afHeight/2){ 
-            this.pos.x = (map(this.pos.x, -this.afWidth, this.afWidth, this.afWidth, -this.afWidth) )
-          
-            this.pos.y = this.afHeight/2;
-        }
-
-       
+    checkLimits() {
+        super.checkLimits()
     }
     
 }

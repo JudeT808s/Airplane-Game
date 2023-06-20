@@ -59,6 +59,7 @@ class AirField {
             plane.step();
             plane.render();
             plane.checkLimits();
+            plane.turn();
             plane.alert = false;
         });
         pop();
